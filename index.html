@@ -1,0 +1,31 @@
+<!--Declara el tipo de documento. Aquí indica que es un documento HTML-->
+<!DOCTYPE html>
+<!--El atributo lang="es" especifica que el contenido está en español.-->
+<html lang="es">
+<!--<head> contiene metadatos:-->
+<head>
+<!--<meta charset="UTF-8">: Establece la codificación de caracteres a UTF-8 (soporta acentos, eñes, etc.).-->
+  <meta charset="UTF-8">
+<!--<title>: Título que aparece en la pestaña del navegador.-->
+  <title>Glosario</title>
+  <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+  <h1>Glosario</h1>
+  <p>Selecciona una letra:</p>
+  <div> <!--cont-->
+    <script>
+      const contenedor = document.currentScript.parentElement;
+      for (let i = 65; i <= 90; i++) { //Bucle que va del 65 al 90, que son los códigos  de las letras A (65) a Z (90).
+        const letra = String.fromCharCode(i);  //Convierte el número ASCII en su letra correspondiente.
+        const enlace = document.createElement('a'); // Crea un nuevo elemento de tipo <a> (enlace).
+        enlace.href = `glosario.html#${letra}`; //Define el destino del enlace.
+        enlace.textContent = letra;    //Asigna el texto visible del enlace.            
+        enlace.style.marginRight = '10px';  //Agrega un margen de 10 píxeles a la derecha del enlace para separarlo visualmente del siguiente.       
+        contenedor.appendChild(enlace); //Agrega el enlace al contenedor <div>. Esto se repite para cada letra.            
+      }
+    </script>
+  </div>
+</body>
+</html>

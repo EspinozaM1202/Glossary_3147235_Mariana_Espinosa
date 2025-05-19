@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contenido del Glosario</title>
+  <style>
+    section {
+      margin-bottom: 100px;
+      padding: 10px;
+      border-bottom: 1px solid #cf0a0a;
+    }
+  </style>
+  <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+  <h1>Contenido del Glosario</h1>
+
+  <!-- Secciones por cada letra -->
+  <script>
+    const body = document.body; //Obtiene una referencia directa al elemento <body> del documento.
+    for (let i = 65; i <= 90; i++) { //Bucle que recorre los códigos ASCII del 65 al 90, que corresponden a las letras A-Z.
+      const letra = String.fromCharCode(i); 
+      const section = document.createElement('section'); //Crea dinámicamente un nuevo elemento HTML <section>.
+      section.id = letra;  // Crea un <section id="A">, etc.
+      section.innerHTML = `<h2>${letra}</h2>`;
+      body.appendChild(section);// Agrega la sección al body
+    
+    }
+  </script>
+</body>
+</html>
